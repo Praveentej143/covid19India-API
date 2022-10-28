@@ -168,8 +168,10 @@ app.get("/districts/:districtId/details/", async (request, response) => {
   const { districtId } = request.params;
   const getStateQuery = `
         SELECT state_name FROM state JOIN district ON state.state_id = district.state_id
-        WHERE district.state_id = ${districtId};
+        WHERE  district.district_id = ${districtId};
         `;
   const getStateName = await db.get(getStateQuery);
   response.send(stateNameConversion(getStateName));
 });
+
+module.exports = app;
