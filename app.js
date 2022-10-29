@@ -28,7 +28,7 @@ initializeDBAndServer();
 
 const statePascalToCamelCase = (dbObject) => {
   return {
-    stateID: dbObject.state_id,
+    stateId: dbObject.state_id,
     stateName: dbObject.state_name,
     population: dbObject.population,
   };
